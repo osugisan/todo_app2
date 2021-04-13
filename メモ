@@ -27,3 +27,43 @@ php artisan make:auth
     <a href="{{ route('login') }}">{{ __('ログイン') }}</a>
 </li>
 @endauth
+
+
+・モデルの作成
+1. Goalモデル作成(-m でマイグレーションも一緒に)
+php artisan make:model -m Goal
+
+2. マイグレーションファイル編集
+
+3.ネストの記述
+
+app/Goal.phpにapp/User.phpとのリレーションを追加
+
+public function user()
+{
+    return $this->belongsTo('App\User');
+}
+
+app/User.phpにもapp/Goal.phpとのリレーションを追加
+
+public function goals()
+{
+    return $this->hasMany('App\Goal');
+}
+
+※hasManyは、複数形
+ belongsToは、単数形
+
+
+・型指定
+
+boolean型
+$table->boolean('done')->default(false);
+
+
+・コントローラーの作成
+
+// --model=Goal 使うモデルの指定
+php artisan make:controller GoalController --resource --model=Goal
+
+
