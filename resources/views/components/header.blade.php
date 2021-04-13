@@ -18,17 +18,17 @@
             <li class="nav-item">
                 <a class="dropdown-item" href="{{ route('logout') }}" 
                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                    {{ __('logout') }}
+                    {{ __('ログアウト') }}
                 </a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
             </li>
             @else
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('register') }}">{{ __('register') }}</a>
+                <a class="nav-link" href="{{ route('register') }}">{{ __('新規登録') }}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('login') }}">{{ __('login') }}</a>
+                <a class="nav-link" href="{{ route('login') }}">{{ __('ログイン') }}</a>
             </li>
             @endauth
         </ul>

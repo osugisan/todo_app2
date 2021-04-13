@@ -6,6 +6,24 @@ npm run dev
 
 
 ・ログイン機能
-
+//　インストール
 php artisan make:auth
 
+// 実装
+@auth
+<li>
+    <a href="{{ route('logout') }}" 
+        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+        {{ __('ログアウト') }}
+    </a>
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        @csrf
+</li>
+@else
+<li>
+    <a href="{{ route('register') }}">{{ __('新規登録') }}</a>
+</li>
+<li class="nav-item">
+    <a href="{{ route('login') }}">{{ __('ログイン') }}</a>
+</li>
+@endauth
