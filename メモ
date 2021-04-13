@@ -1,0 +1,11 @@
+・vue.js導入
+npm install
+
+// vue.jsのファイル編集したら都度実行する
+npm run dev
+
+
+・ログイン機能
+
+php artisan make:auth
+
