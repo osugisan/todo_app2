@@ -54,6 +54,9 @@ public function goals()
 ※hasManyは、複数形
  belongsToは、単数形
 
+4.最後にもう一回マイグレーションする
+php artisan migrate
+
 
 ・型指定
 
@@ -65,5 +68,3 @@ $table->boolean('done')->default(false);
 
 // --model=Goal 使うモデルの指定
 php artisan make:controller GoalController --resource --model=Goal
-
-
